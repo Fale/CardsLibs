@@ -1,2 +1,35 @@
 apply plugin: 'java'
+apply plugin: 'idea'
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/java'
+        }
+        resources {
+            srcDir 'src/resources'
+        }
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+idea.project.ipr {
+    beforeMerged { project ->
+        project.modulePaths.clear()
+    }
+}
