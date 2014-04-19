@@ -33,3 +33,9 @@ idea.project.ipr {
         project.modulePaths.clear()
     }
 }
+
+task docs(type: Javadoc) {
+    source = sourceSets.main.allJava
+    destinationDir = reporting.file("docs")
+
+}
