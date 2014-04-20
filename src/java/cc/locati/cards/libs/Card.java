@@ -73,7 +73,7 @@ public class Card {
 
     /**
      * Returns the deck of this card.
-     * @returns the deck
+     * @return the deck
      */
     public int getDeck() {
         return deck;
@@ -81,7 +81,7 @@ public class Card {
 
     /**
      * Returns the suit of this card.
-     * @returns the suit, which is one of the constants Card.SPADES,
+     * @return the suit, which is one of the constants Card.SPADES,
      * Card.HEARTS, Card.DIAMONDS, Card.CLUBS, or Card.JOKER
      */
     public int getSuit() {

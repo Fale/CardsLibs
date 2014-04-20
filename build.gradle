@@ -36,6 +36,4 @@ idea.project.ipr {
 
 task docs(type: Javadoc) {
     source = sourceSets.main.allJava
-    destinationDir = reporting.file("docs")
-
 }

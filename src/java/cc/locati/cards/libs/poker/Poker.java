@@ -11,17 +11,21 @@ public class Poker {
     private Deck deck;
 
     private Hand[] hands;
-/*
-    public void Poker(int players) {
+
+    public Poker() {
+        this(2);
+    }
+
+    public Poker(int players) {
         deck.shuffle();
         while (players > 0) {
-            for (int cards = 0; cards++; cards < 5) {
+            for (int cards = 0; cards < 5; cards++) {
                 hands[players].addCard(deck.dealCard());
             }
             players--;
         }
     }
-*/
+
     public void playerMove(int player) {
         // Choose
         // Act

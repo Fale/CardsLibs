@@ -14,6 +14,7 @@ import cc.locati.cards.libs.Card;
 public class Hand {
 
     private ArrayList hand;   // The cards in the hand.
+    private int maxCardNumber;
 
     class CardsGroup {
         int value;
@@ -21,7 +22,6 @@ public class Hand {
     }
 
     /**
-
      * Create a hand that is initially empty.
      */
     public Hand() {
@@ -187,21 +187,34 @@ public class Hand {
     }
 
     /**
-     * Identify pairs and double pairs.
-     * @return cards of the pair(s)
+     * Count the number of pairs.
+     * @return number of pairs
      */
     public int getCountPairs() {
         return getCountGroupByNumber(2);
     }
 
+    /**
+     * Count the number of triples.
+     * @return number of triples
+     */
     public int getCountTriples() {
         return getCountGroupByNumber(3);
     }
 
+    /**
+     * Count the number of pockers
+     * @return number of pokers
+     */
     public int getCountPokers() {
         return getCountGroupByNumber(4);
     }
 
+    /**
+     * Count the number of groups created by N cards.
+     * @param cardsNumber Number of cards in each group
+     * @return number of groups witn the given number of card
+     */
     public int getCountGroupByNumber(int cardsNumber) {
         int groups = 0;
         ArrayList<CardsGroup> cards = groupByNumber();
@@ -214,4 +227,19 @@ public class Hand {
         return groups;
     }
 
+    /**
+     * Set the maximum number of Cards holdable in Hand
+     * @param maxCardNumberValue Maximum number of Card holdable in Hand
+     */
+    public void setMaxCardNumber(int maxCardNumberValue) {
+        maxCardNumber = maxCardNumberValue;
+    }
+
+    /**
+     * Get the maximum number of Cards holdable in Hand
+     * @return Maximum number of Card holdable in Hand
+     */
+    public int getMaxCardNumber() {
+        return maxCardNumber;
+    }
 }
