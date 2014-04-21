@@ -36,6 +36,15 @@ public class Discarded {
     }
 
     /**
+     * Get a specific Card by ID
+     * @param id ID of the Card
+     * @return The Card
+     */
+    public Card getCard(int id) {
+        return discarded.get(id);
+    }
+
+    /**
      * Remove a Card from the Discard pile
      * @param card Card to be deleted from the Discarded pile
      */
@@ -75,4 +84,15 @@ public class Discarded {
         return discarded.get(getCardsNumber());
     }
 
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for(int c = 0; c < getCardsNumber(); c++)
+        {
+            sb.append(c)
+                    .append(" ")
+                    .append(getCard(c).toString())
+                    .append("\n");
+        }
+        return sb.toString();
+    }
 }

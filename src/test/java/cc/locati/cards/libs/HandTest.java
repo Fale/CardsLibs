@@ -47,7 +47,7 @@ public class HandTest {
     public void getCard() throws Exception {
         Hand hand = new Hand();
         hand.addCard(new Card(1, 0, 0));
-        assertEquals(hand.getCard(0).toString(), "Ace of Hearts");
+        assertEquals(hand.getCard(0).toString(), "Ace of Hearts deck 0");
     }
 
     @Test

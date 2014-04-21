@@ -242,4 +242,16 @@ public class Hand {
     public int getMaxCardNumber() {
         return maxCardNumber;
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for(int c = 0; c < getCardCount(); c++)
+        {
+            sb.append(c);
+            sb.append(" ");
+            sb.append(getCard(c));
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 }

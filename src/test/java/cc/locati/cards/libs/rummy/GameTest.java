@@ -32,4 +32,10 @@ public class GameTest {
         Game game = new Game();
         assertEquals(game.getPlayersNumber(), game.DEFAULT_PLAYERS);
     }
+
+    @Test
+    public void CreationTest() {
+        Game game = new Game();
+        System.out.println(game.toString());
+    }
 }

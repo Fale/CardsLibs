@@ -164,12 +164,12 @@ public class Card {
     public String toString() {
         if (suit == JOKER) {
             if (value == 1)
-                return "Joker";
+                return "Joker deck " + getDeck();
             else
-                return "Joker #" + value;
+                return "Joker #" + value + " " + "deck " + getDeck();
         }
         else
-            return getValueAsString() + " of " + getSuitAsString();
+            return getValueAsString() + " of " + getSuitAsString() + " deck " + getDeck();
     }
 /*
     private Context mContext;

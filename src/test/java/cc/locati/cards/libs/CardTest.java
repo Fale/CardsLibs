@@ -31,7 +31,7 @@ public class CardTest {
     // Joker
     @Test
     public void testToString1() throws Exception {
-        assertEquals(card1.toString(), "Joker");
+        assertEquals(card1.toString(), "Joker deck 0");
     }
 
     @Test
@@ -73,7 +73,7 @@ public class CardTest {
     // 5 of Hearts
     @Test
     public void testToString2() throws Exception {
-        assertEquals(card2.toString(), "5 of Hearts");
+        assertEquals(card2.toString(), "5 of Hearts deck 1");
     }
 
     @Test
@@ -114,7 +114,7 @@ public class CardTest {
     // Ace of Diamonds (still to be changed)
     @Test
     public void testToString3() throws Exception {
-        assertEquals(card3.toString(), "Ace of Diamonds");
+        assertEquals(card3.toString(), "Ace of Diamonds deck 2");
     }
 
     @Test

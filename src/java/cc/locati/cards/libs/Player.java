@@ -101,5 +101,34 @@ public class Player {
         name = nameValue;
     }
 
+    /**
+     * Get the Player's Id
+     * @return Id of the Player
+     */
+    public int getId() {
+        return id;
+    }
 
+    /**
+     * Set the Player's Id
+     * @param idValue Id of the Player
+     */
+    public void setId(int idValue) {
+        id = idValue;
+    }
+
+    /**
+     * Add a card to Player's Hand
+     * @param card Card to add to Player's Hand
+     */
+    public void drawCard(Card card) {
+        hand.addCard(card);
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Hand\n");
+        sb.append(hand.toString());
+        return sb.toString();
+    }
 }

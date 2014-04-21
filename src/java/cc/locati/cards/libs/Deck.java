@@ -118,4 +118,19 @@ public class Deck {
         return (deck.length == 54);
     }
 
+    public Card getCard(int id) {
+        return deck[id];
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for(int c = 0; c < cardsLeft(); c++)
+        {
+            sb.append(c)
+                    .append(" ")
+                    .append(getCard(c).toString())
+                    .append("\n");
+        }
+        return sb.toString();
+    }
 } // end class Deck
