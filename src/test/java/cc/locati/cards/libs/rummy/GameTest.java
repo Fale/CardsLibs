@@ -27,4 +27,9 @@ public class GameTest {
         new Game(9);
     }
 
+    @Test
+    public void DefaultPlayersTest() {
+        Game game = new Game();
+        assertEquals(game.getPlayersNumber(), game.DEFAULT_PLAYERS);
+    }
 }
