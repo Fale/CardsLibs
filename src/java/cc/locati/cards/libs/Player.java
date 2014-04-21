@@ -9,13 +9,22 @@ public class Player {
     Hand hand;
     String name;
     int intelligence;
+    int id;
 
     /**
      * Create a new Player
      * @param nameValue Name of the Player
      */
     public Player(String nameValue) {
-        this(nameValue, 0, false);
+        this(nameValue, 0, 0, false);
+    }
+
+    /**
+     * Create a new Player
+     * @param playerNo ID of the player
+     */
+    public Player(int playerNo) {
+        this("", playerNo, 0, false);
     }
 
     /**
@@ -24,20 +33,22 @@ public class Player {
      * @param intelligenceValue Intelligence of the Player
      */
     public Player(String nameValue, int intelligenceValue) {
-        this(nameValue, intelligenceValue, false);
+        this(nameValue, 0, intelligenceValue, false);
     }
 
     /**
      * Create a new player
      * @param nameValue Name of the Player
+     * @param playerNo ID of the player
      * @param intelligenceValue Intelligence of the Player
      * @param tableValue Player table presence
      */
-    public Player(String nameValue, int intelligenceValue, boolean tableValue) {
+    public Player(String nameValue, int playerNo, int intelligenceValue, boolean tableValue) {
         if (nameValue != "")
             name = nameValue;
         if (tableValue)
             table = new Table();
+        id = playerNo;
         intelligence = intelligenceValue;
         hand = new Hand();
     }
