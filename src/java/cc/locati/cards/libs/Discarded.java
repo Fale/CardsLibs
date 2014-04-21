@@ -40,7 +40,10 @@ public class Discarded {
      * @param card Card to be deleted from the Discarded pile
      */
     public void removeCard(Card card) {
-        discarded.remove(card);
+        if (getCardsNumber() > 0)
+            discarded.remove(card);
+        else
+            throw new IllegalStateException("No cards are present in the discarded pile.");
     }
 
     /**
@@ -48,14 +51,20 @@ public class Discarded {
      * @param position Card to be deleted from the Discard pile
      */
     public void removeCard(int position) {
-        discarded.remove(position);
+        if (getCardsNumber() > 0)
+            discarded.remove(position);
+        else
+            throw new IllegalStateException("No cards are present in the discarded pile.");
     }
 
     /**
      * Remove last Card of the Discarded pile
      */
     public void removeLastCard() {
-        discarded.remove(getCardsNumber());
+        if (getCardsNumber() > 0)
+            discarded.remove(getCardsNumber());
+        else
+            throw new IllegalStateException("No cards are present in the discarded pile.");
     }
 
     /**
