@@ -125,6 +125,10 @@ public class Player {
         hand.addCard(card);
     }
 
+    /**
+     * Ouput the Player to string for debug purpose
+     * @return The Player string
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Hand\n");

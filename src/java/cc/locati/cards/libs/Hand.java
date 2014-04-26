@@ -8,25 +8,22 @@ package cc.locati.cards.libs;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cc.locati.cards.libs.Card;
 
 public class Hand {
 
-    private ArrayList hand;   // The cards in the hand.
+    private List<Card> hand;   // The cards in the hand.
     private int maxCardNumber;
-
-    class CardsGroup {
-        int value;
-        int count;
-    }
 
     /**
      * Create a hand that is initially empty.
      */
     public Hand() {
-        hand = new ArrayList();
+        hand = new ArrayList<Card>();
     }
+
     /**
      * Remove all cards from the hand, leaving it empty.
      */
@@ -67,6 +64,16 @@ public class Hand {
             throw new IllegalArgumentException("Position does not exist in hand: "
                     + position);
         hand.remove(position);
+    }
+
+    /**
+     * Remove a bunch of cards in a single command
+     * @param cards Cards to be removed
+     */
+    public void removeCards(List<Card> cards) {
+        for (Card card:cards) {
+            removeCard(card);
+        }
     }
 
     /**
@@ -164,8 +171,16 @@ public class Hand {
         return count;
     }
 
-    public ArrayList<CardsGroup> groupByNumber() {
-        ArrayList<CardsGroup> groups = new ArrayList<CardsGroup>();
+    public int[] countByNumber() {
+        int[] groups = new int[14];
+        for (int value = 1; value <= 13; value++) {
+            groups[value] = getCountByNumber(value);
+        }
+        return groups;
+    }
+
+    public List<CardsGroup> groupByNumber() {
+        List<CardsGroup> groups = new ArrayList<CardsGroup>();
         for (int value = 1; value < 13; value++) {
             CardsGroup cardsGroup = new CardsGroup();
             cardsGroup.value = value;
@@ -175,8 +190,8 @@ public class Hand {
         return groups;
     }
 
-    public ArrayList<CardsGroup> groupBySuit() {
-        ArrayList<CardsGroup> groups = new ArrayList<CardsGroup>();
+    public List<CardsGroup> groupBySuit() {
+        List<CardsGroup> groups = new ArrayList<CardsGroup>();
         for (int value = 1; value < 13; value++) {
             CardsGroup cardsGroup = new CardsGroup();
             cardsGroup.value = value;
@@ -217,7 +232,7 @@ public class Hand {
      */
     public int getCountGroupByNumber(int cardsNumber) {
         int groups = 0;
-        ArrayList<CardsGroup> cards = groupByNumber();
+        List<CardsGroup> cards = groupByNumber();
         CardsGroup group = new CardsGroup();
         for (int pointer = 0; pointer < cards.size(); pointer++) {
             group = cards.get(pointer);

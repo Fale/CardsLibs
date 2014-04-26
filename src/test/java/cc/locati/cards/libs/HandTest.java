@@ -103,6 +103,24 @@ public class HandTest {
     }
 
     @Test
+    public void countByNumber() throws Exception {
+        int[] count = bigHand.countByNumber();
+        assertEquals(count[1], 0);
+        assertEquals(count[2], 0);
+        assertEquals(count[3], 2);
+        assertEquals(count[4], 0);
+        assertEquals(count[5], 0);
+        assertEquals(count[6], 0);
+        assertEquals(count[7], 0);
+        assertEquals(count[8], 3);
+        assertEquals(count[9], 2);
+        assertEquals(count[10], 4);
+        assertEquals(count[11], 0);
+        assertEquals(count[12], 0);
+        assertEquals(count[13], 0);
+    }
+
+    @Test
     public void getCountByNumber() throws Exception {
         assertEquals(bigHand.getCountByNumber(1), 0);
         assertEquals(bigHand.getCountByNumber(2), 0);

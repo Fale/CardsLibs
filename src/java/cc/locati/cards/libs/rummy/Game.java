@@ -22,6 +22,8 @@ public class Game {
     Player[] players;
     private int playersNumber;
 
+    int currentPlayer;
+
     Deck deck;
     Discarded discarded;
 
@@ -64,6 +66,41 @@ public class Game {
         {
             discarded.addCard(deck.dealCard());
         }
+        // Set the first Player as currentPlayer
+        currentPlayer = 0;
+    }
+
+    /**
+     * Get the current playing Player
+     * @return current Player
+     */
+    public int getCurrentPlayer()
+    {
+        return currentPlayer;
+    }
+
+    /**
+     * End the current round (next player will be returned)
+     * @return Next player ID
+     */
+    public int endRound()
+    {
+        if (currentPlayer < getPlayersNumber())
+            currentPlayer++;
+        else
+            currentPlayer = 0;
+        return currentPlayer;
+    }
+
+    /**
+     * Trigger player round
+     */
+    public void aiRound (Player player)
+    {
+        // Evaluate if is better to draw from Deck or from Discarded
+        player.drawCard(deck.dealCard());
+        // Evaluate if and what put on Table
+        // Evaluate which Card is better to discard
     }
 
     /**
@@ -74,6 +111,10 @@ public class Game {
         return playersNumber;
     }
 
+    /**
+     * Transform the current situation of the Game in a string for debug purpose
+     * @return String of the Game
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Deck\n");
