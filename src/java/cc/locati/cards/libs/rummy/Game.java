@@ -19,6 +19,8 @@ public class Game {
     final static int INIT_CARDS_DISCARDED = 1;
     final static int INIT_CARDS_HANDLED = 13;
 
+    final static int POINTS_TO_OPEN = 40;
+
     Player[] players;
     private int playersNumber;
 

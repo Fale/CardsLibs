@@ -18,37 +18,21 @@ import cc.locati.cards.libs.Table;
  */
 public class AICommon {
 
-    private Player player;
-    private List<Player> players;
-    private Discarded discarded;
-    private Deck deck;
+    protected Player player;
+    protected List<Player> players;
+    protected Discarded discarded;
+    protected Deck deck;
 
     public AICommon(List<Player> players, Deck deck, Discarded discarded, int playerId)
     {
-        /*player = players.get(playerId);
-        players.remove(playerId);
+        if (players.size() >= playerId + 1) {
+            player = players.get(playerId);
+            players.remove(playerId);
+        } else
+            player = new Player(playerId);
         this.players = players;
         this.discarded = discarded;
-        this.deck = deck;*/
+        this.deck = deck;
     }
 
-    protected int countPoints(Hand hand) {
-        int points = 0;
-        int[] cards = hand.countByNumber();
-
-        for (int c = 1; c < 13; c++) {
-            if (cards[c] >= 3) {
-                if (c == 1) {
-                    points += 11 * cards[c];
-                    continue;
-                }
-                if (c >= 11) {
-                    points += 10 * cards[c];
-                    continue;
-                }
-                points += c * cards[c];
-            }
-        }
-        return points;
-    }
 }
