@@ -16,14 +16,14 @@ public class DiscardedTest {
     @Test
     public void NoCards() {
         Discarded discarded = new Discarded();
-        assertEquals(discarded.getCardsNumber(), 0);
+        assertEquals(0, discarded.getCardsNumber());
     }
 
     @Test
     public void OneCard() {
         Discarded discarded = new Discarded();
         discarded.addCard(new Card(5, 0, 0));
-        assertEquals(discarded.getCardsNumber(), 1);
+        assertEquals(1, discarded.getCardsNumber());
     }
 
     @Test
@@ -31,7 +31,7 @@ public class DiscardedTest {
         Discarded discarded = new Discarded();
         discarded.addCard(new Card(5, 0, 0));
         discarded.addCard(new Card(4, 2, 0));
-        assertEquals(discarded.getCardsNumber(), 2);
+        assertEquals(2, discarded.getCardsNumber());
     }
 
     @Test

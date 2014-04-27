@@ -30,7 +30,7 @@ public class GameTest {
     @Test
     public void DefaultPlayersTest() {
         Game game = new Game();
-        assertEquals(game.getPlayersNumber(), game.DEFAULT_PLAYERS);
+        assertEquals(game.DEFAULT_PLAYERS, game.getPlayersNumber());
     }
 
     @Test

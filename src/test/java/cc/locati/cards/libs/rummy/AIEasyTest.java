@@ -31,7 +31,7 @@ public class AIEasyTest {
         hand.addCard(new Card(9, 0, 0));
         hand.addCard(new Card(5, 0, 0));
         AIEasy easy = new AIEasy(new ArrayList<Player>(), new Deck(), new Discarded(), 0);
-        assertEquals(easy.countPoints(hand), 0);
+        assertEquals(0, easy.countPoints(hand));
     }
 
     @Test
@@ -51,6 +51,6 @@ public class AIEasyTest {
         hand.addCard(new Card(11, 0, 0));
         hand.addCard(new Card(11, 0, 0));
         AIEasy easy = new AIEasy(new ArrayList<Player>(), new Deck(), new Discarded(), 0);
-        assertEquals(easy.countPoints(hand), 30);
+        assertEquals(30, easy.countPoints(hand));
     }
 }
