@@ -110,7 +110,7 @@ public class Hand {
      * Note that aces are considered to have the lowest value, 1.
      */
     public void sortBySuit() {
-        ArrayList newHand = new ArrayList();
+        List<Card> newHand = new ArrayList<Card>();
         while (hand.size() > 0) {
             int pos = 0;  // Position of minimal card.
             Card c = (Card)hand.get(0);  // Minimal card.
@@ -134,7 +134,7 @@ public class Hand {
      * Note that aces are considered to have the lowest value, 1.
      */
     public void sortByValue() {
-        ArrayList newHand = new ArrayList();
+        List<Card> newHand = new ArrayList<Card>();
         while (hand.size() > 0) {
             int pos = 0;  // Position of minimal card.
             Card c = (Card)hand.get(0);  // Minimal card.
