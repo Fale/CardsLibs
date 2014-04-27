@@ -31,125 +31,124 @@ public class CardTest {
     // Joker
     @Test
     public void testToString1() throws Exception {
-        assertEquals(card1.toString(), "Joker deck 0");
+        assertEquals("Joker deck 0", card1.toString());
     }
 
     @Test
     public void testGetValue1() throws Exception {
-        assertEquals(card1.getValue(), 1);
+        assertEquals(1, card1.getValue());
     }
 
     @Test
     public void testGetValueAsString1() throws Exception {
-        assertEquals(card1.getValueAsString(), "1");
+        assertEquals("1", card1.getValueAsString());
     }
 
     @Test
     public void testGetValueAsShortString1() throws Exception {
-        assertEquals(card1.getValueAsShortString(), "1");
+        assertEquals("1", card1.getValueAsShortString());
     }
 
     @Test
     public void testGetSuit1() throws Exception {
-        assertEquals(card1.getSuit(), 4);
+        assertEquals(4, card1.getSuit());
     }
 
     @Test
     public void testGetSuitAsString1() throws Exception {
-        assertEquals(card1.getSuitAsString(), "Joker");
+        assertEquals("Joker", card1.getSuitAsString());
     }
 
     @Test
     public void testGetDeck1() throws Exception {
-        assertEquals(card1.getDeck(), 0);
+        assertEquals(0, card1.getDeck());
     }
 
     @Test
-    @Ignore
     public void testGetAsset1() throws Exception {
-        assertEquals(card1.getAsset(), "decks/default/5/1.svg");
+        assertEquals("decks/default/joker.svg", card1.getAsset());
     }
 
     // 5 of Hearts
     @Test
     public void testToString2() throws Exception {
-        assertEquals(card2.toString(), "5 of Hearts deck 1");
+        assertEquals("5 of Hearts deck 1", card2.toString());
     }
 
     @Test
     public void testGetValue2() throws Exception {
-        assertEquals(card2.getValue(), 5);
+        assertEquals(5, card2.getValue());
     }
 
     @Test
     public void testGetValueAsString2() throws Exception {
-        assertEquals(card2.getValueAsString(), "5");
+        assertEquals("5", card2.getValueAsString());
     }
 
     @Test
     public void testGetValueAsShortString2() throws Exception {
-        assertEquals(card2.getValueAsShortString(), "5");
+        assertEquals("5", card2.getValueAsShortString());
     }
 
     @Test
     public void testGetSuit2() throws Exception {
-        assertEquals(card2.getSuit(), 0);
+        assertEquals(0, card2.getSuit());
     }
 
     @Test
     public void testGetSuitAsString2() throws Exception {
-        assertEquals(card2.getSuitAsString(), "Hearts");
+        assertEquals("Hearts", card2.getSuitAsString());
     }
 
     @Test
     public void testGetDeck2() throws Exception {
-        assertEquals(card2.getDeck(), 1);
+        assertEquals(1, card2.getDeck());
     }
 
     @Test
     public void testGetAsset2() throws Exception {
-        assertEquals(card2.getAsset(), "decks/default/0/5.svg");
+        assertEquals("decks/default/0/5.svg", card2.getAsset());
     }
 
     // Ace of Diamonds (still to be changed)
     @Test
     public void testToString3() throws Exception {
-        assertEquals(card3.toString(), "Ace of Diamonds deck 2");
+        assertEquals("Ace of Diamonds deck 2", card3.toString());
     }
 
     @Test
     public void testGetValue3() throws Exception {
-        assertEquals(card3.getValue(), 1);
+        assertEquals(1, card3.getValue());
     }
 
     @Test
     public void testGetValueAsString3() throws Exception {
-        assertEquals(card3.getValueAsString(), "Ace");
+        assertEquals("Ace", card3.getValueAsString());
     }
 
     @Test
     public void testGetValueAsShortString3() throws Exception {
-        assertEquals(card3.getValueAsShortString(), "A");
+        assertEquals("A", card3.getValueAsShortString());
     }
 
     @Test
     public void testGetSuit3() throws Exception {
-        assertEquals(card3.getSuit(), 1);
+        assertEquals(1, card3.getSuit());
     }
 
     @Test
     public void testGetSuitAsString3() throws Exception {
-        assertEquals(card3.getSuitAsString(), "Diamonds");
+        assertEquals("Diamonds", card3.getSuitAsString());
     }
 
     @Test
     public void testGetDeck3() throws Exception {
-        assertEquals(card3.getDeck(), 2);
+        assertEquals(2, card3.getDeck());
     }
 
     @Test
     public void testGetAsset3() throws Exception {
-        assertEquals(card3.getAsset(), "decks/default/1/A.svg");
+        assertEquals("decks/default/1/A.svg", card3.getAsset());
     }
 
 }

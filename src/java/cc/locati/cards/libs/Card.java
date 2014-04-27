@@ -181,6 +181,9 @@ public class Card {
     }
 */
     public String getAsset() {
-        return "decks/default/" + suit + "/" + getValueAsShortString() + ".svg";
+        if (suit < 4)
+            return "decks/default/" + suit + "/" + getValueAsShortString() + ".svg";
+        else
+            return "decks/default/joker.svg";
     }
 } // end class Card

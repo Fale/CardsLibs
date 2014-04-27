@@ -153,11 +153,26 @@ public class Hand {
     }
 
 
+    public int getCountByNumberWithoutDoubles(int number) {
+        int count = 0;
+        boolean suits[] = new boolean[4];
+        for (int card = 0; card < getCardCount(); card++) {
+            if (getCard(card).getValue() == number
+                    && getCard(card).getSuit() < 4)
+                if (!suits[getCard(card).getSuit()]){
+                    count++;
+                    suits[getCard(card).getSuit()] = true;
+                }
+        }
+        return count;
+    }
+
     public int getCountByNumber(int number) {
         int count = 0;
         for (int card = 0; card < getCardCount(); card++) {
-            if (getCard(card).getValue() == number)
-                count++;
+            if (getCard(card).getValue() == number
+                && getCard(card).getSuit() < 4)
+                    count++;
         }
         return count;
     }
@@ -175,6 +190,14 @@ public class Hand {
         int[] groups = new int[14];
         for (int value = 1; value <= 13; value++) {
             groups[value] = getCountByNumber(value);
+        }
+        return groups;
+    }
+
+    public int[] countByNumberWithoutDoubles() {
+        int[] groups = new int[14];
+        for (int value = 1; value <= 13; value++) {
+            groups[value] = getCountByNumberWithoutDoubles(value);
         }
         return groups;
     }
@@ -232,13 +255,10 @@ public class Hand {
      */
     public int getCountGroupByNumber(int cardsNumber) {
         int groups = 0;
-        List<CardsGroup> cards = groupByNumber();
-        CardsGroup group = new CardsGroup();
-        for (int pointer = 0; pointer < cards.size(); pointer++) {
-            group = cards.get(pointer);
-            if (group.count == cardsNumber)
-                groups++;
-        }
+        int cards[] = countByNumberWithoutDoubles();
+        for (int card: cards)
+            if (card == cardsNumber)
+                groups ++;
         return groups;
     }
 
